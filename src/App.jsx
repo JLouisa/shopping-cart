@@ -1,9 +1,14 @@
+import Footer from "./components/Footer";
+import MainSection from "./components/MainSection";
+import NavigationBar from "./components/NavigationBar";
 import "./styles/App.css";
 
 function App() {
   return (
     <>
-      <h1>Shopping Cart</h1>
+      <NavigationBar />
+      <MainSection />
+      <Footer />
     </>
   );
 }
