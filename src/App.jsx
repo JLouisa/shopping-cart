@@ -8,8 +8,6 @@ import "./styles/App.css";
 function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
-  console.log("cart");
-  console.log(cart);
 
   useEffect(() => {
     getData().then((res) => setProducts(res));
@@ -20,9 +18,17 @@ function App() {
       this.id = id;
       this.quantity = quantity;
       this.price = price;
-      this.sum = this.price * quantity;
     }
   }
+
+  const deepCopy = (arr) => {
+    const newArr = arr.map((item) => {
+      return Object.assign({}, item);
+    });
+    console.log("deep Copy");
+    console.log(newArr);
+    return newArr;
+  };
 
   const createCartItem = (arr, item, qt) => {
     const findItem = arr.find(({ id }) => id === item.id);
@@ -43,10 +49,18 @@ function App() {
     createCartItem(newCart, theItem, qt);
   };
 
+  const adjustCartItem = (prod) => {
+    console.log("prod");
+    console.log(prod);
+    const newCart = [...cart];
+  };
+
   return (
     <>
       <NavigationBar />
-      <Outlet context={[products, addProductToCart]} />
+      <main>
+        <Outlet context={[products, addProductToCart, adjustCartItem, cart, setCart]} />
+      </main>
       <Footer />
     </>
   );

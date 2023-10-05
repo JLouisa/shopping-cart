@@ -4,14 +4,13 @@ import { useOutletContext } from "react-router-dom";
 
 const Shop = () => {
   const [products, addProductToCart] = useOutletContext();
-  console.log(products);
 
   if (products.length === 0) return "loading...";
   return (
     <>
-      <main>
+      <section className="shopSection">
         <Products products={products} addProductToCart={addProductToCart} />
-      </main>
+      </section>
     </>
   );
 };
