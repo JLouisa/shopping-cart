@@ -1,4 +1,4 @@
-import ShoppingCart from "./ShoppingCart";
+import ShoppingCartIMG from "./ShoppingCartIMG";
 import { Link } from "react-router-dom";
 
 const NavigationBar = () => {
@@ -12,7 +12,9 @@ const NavigationBar = () => {
         <Link to="shop">
           <span>Shop</span>
         </Link>
-        <ShoppingCart />
+        <Link to="shopping-cart">
+          <ShoppingCartIMG />
+        </Link>
       </div>
     </nav>
   );

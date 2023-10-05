@@ -60,6 +60,9 @@ nav > div {
 main {
   padding: 1em;
   display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
   justify-content: center;
 }
 

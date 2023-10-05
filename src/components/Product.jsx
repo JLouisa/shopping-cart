@@ -1,19 +1,36 @@
 import PropTypes from "prop-types";
+import Button from "./Button";
 
-const Products = ({ products }) => {
+const Products = ({ products, addProductToCart }) => {
   return (
-    <div className="productContainer">
-      <img src={products.image} alt="" />
-      <div>
-        <p>{products.title}</p>
-        <p>{`€${products.price}`}</p>
-      </div>
-    </div>
+    <>
+      {products.map((product) => {
+        return (
+          <div className="productContainer" key={product.id}>
+            <img src={product.image} alt="" />
+            <div>
+              <p>{product.title}</p>
+              <p>{`€${product.price}`}</p>
+              <div>
+                <Button
+                  text="Add to Cart"
+                  theClass="btn2"
+                  onClick={() => {
+                    addProductToCart(product);
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </>
   );
 };
 
 Products.propTypes = {
   products: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  addProductToCart: PropTypes.func,
 };
 
 export default Products;

@@ -1,11 +1,5 @@
-import { Link } from "react-router-dom";
-
 const Home = () => {
-  return (
-    <Link to="home">
-      <span>Home</span>
-    </Link>
-  );
+  return <p>This is Home page area</p>;
 };
 
 export default Home;

@@ -10,7 +10,7 @@ const Button = ({
   theClass = "btn",
 }) => {
   return (
-    <button className={`btn ${theClass}`} style={{ color: color, backgroundColor: bgColor }} onClick={onClick}>
+    <button className={`${theClass}`} style={{ color: color, backgroundColor: bgColor }} onClick={onClick}>
       {text}
     </button>
   );
