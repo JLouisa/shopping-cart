@@ -24,23 +24,23 @@ function App() {
     }
   }
 
-  const createCartItem = (arr, item) => {
+  const createCartItem = (arr, item, qt) => {
     const findItem = arr.find(({ id }) => id === item.id);
     if (findItem === undefined || arr.length === 0) {
-      const newItem = new CartItem(item.id, 1, item.price);
+      const newItem = new CartItem(item.id, qt === undefined ? 1 : qt, item.price);
       setCart([...arr, newItem]);
       return;
     }
     if (findItem !== undefined) {
-      findItem.quantity += 1;
+      findItem.quantity += qt === undefined ? 1 : qt;
       setCart(arr);
     }
   };
 
-  const addProductToCart = (item) => {
+  const addProductToCart = (item, qt) => {
     const newCart = JSON.parse(JSON.stringify(cart));
     const theItem = Object.assign({}, item);
-    createCartItem(newCart, theItem);
+    createCartItem(newCart, theItem, qt);
   };
 
   return (

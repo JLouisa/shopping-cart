@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import Button from "./Button";
-import QuantityForm from "./QuantityForm";
+import { QuantityForm } from "./QuantityForm";
 
 const Products = ({ products, addProductToCart }) => {
   return (
@@ -13,7 +13,7 @@ const Products = ({ products, addProductToCart }) => {
               <p>{product.title}</p>
               <p>{`€${product.price}`}</p>
               <div>
-                <QuantityForm />
+                <QuantityForm product={product} addProductToCart={addProductToCart} />
                 <Button
                   text="Add to Cart"
                   theClass="btn2"
