@@ -83,3 +83,20 @@ main {
 footer {
   border-top: 2px solid #777;
 }
+
+.quantityDiv {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
+.no-spinners {
+  width: 2rem;
+}
+
+/* For Chrome */
+.no-spinners::-webkit-inner-spin-button,
+.no-spinners::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
