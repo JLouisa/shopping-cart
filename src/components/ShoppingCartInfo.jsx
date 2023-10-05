@@ -7,20 +7,21 @@ const ShoppingCartInfo = ({ products, addProductToCart, adjustCartItem, cart, se
 
   const deleteProduct = (id) => {
     console.log("delete", id);
+    const newArr = cart.filter((item) => item.id !== id);
+    setCart(newArr);
   };
 
   const handleDecrement = (prod) => {
     let x = prod.quantity;
     x -= 1;
     if (x <= 0) x = 0;
-    console.log(x);
-    addProductToCart(prod.quantity);
+    adjustCartItem(prod, x);
   };
 
   const handleIncrement = (prod) => {
     let x = prod.quantity;
     x += 1;
-    console.log(x);
+    adjustCartItem(prod, x);
   };
 
   return (

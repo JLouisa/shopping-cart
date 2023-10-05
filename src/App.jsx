@@ -25,8 +25,6 @@ function App() {
     const newArr = arr.map((item) => {
       return Object.assign({}, item);
     });
-    console.log("deep Copy");
-    console.log(newArr);
     return newArr;
   };
 
@@ -49,10 +47,11 @@ function App() {
     createCartItem(newCart, theItem, qt);
   };
 
-  const adjustCartItem = (prod) => {
-    console.log("prod");
-    console.log(prod);
-    const newCart = [...cart];
+  const adjustCartItem = (prod, qt) => {
+    const newCart = deepCopy(cart);
+    const foundprod = newCart.find(({ id }) => id === prod.id);
+    foundprod.quantity = qt;
+    setCart(newCart);
   };
 
   return (
