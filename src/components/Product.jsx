@@ -2,12 +2,11 @@ import PropTypes from "prop-types";
 
 const Products = ({ products }) => {
   return (
-    <div>
+    <div className="productContainer">
       <img src={products.image} alt="" />
       <div>
         <p>{products.title}</p>
-        <p>{products.description}</p>
-        <p>{products.price}</p>
+        <p>{`€${products.price}`}</p>
       </div>
     </div>
   );

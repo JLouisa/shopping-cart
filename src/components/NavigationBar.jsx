@@ -1,17 +1,17 @@
 import ShoppingCart from "./ShoppingCart";
-import "../styles/NavigationBar.module.css";
+import { Link } from "react-router-dom";
 
 const NavigationBar = () => {
   return (
     <nav>
       <h1>Shopping Cart</h1>
       <div className="navListItems">
-        <a href="">
+        <Link to="home">
           <span>Home</span>
-        </a>
-        <a href="">
+        </Link>
+        <Link to="shop">
           <span>Shop</span>
-        </a>
+        </Link>
         <ShoppingCart />
       </div>
     </nav>

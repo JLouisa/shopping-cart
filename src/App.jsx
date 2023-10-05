@@ -3,6 +3,7 @@ import Footer from "./components/Footer.jsx";
 import MainSection from "./components/MainSection.jsx";
 import NavigationBar from "./components/NavigationBar.jsx";
 import getData from "./components/getData.jsx";
+import { Outlet } from "react-router-dom";
 import "./styles/App.css";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
     <>
       <NavigationBar />
       <MainSection products={products} />
+      <Outlet context={[products, setProducts]} />
       <Footer />
     </>
   );

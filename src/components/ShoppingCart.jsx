@@ -1,5 +1,4 @@
 import basket from "../assets/shopping-basket2-64.png";
-import "../styles/ShoppingCart.module.css";
 
 const ShoppingCart = () => {
   return (

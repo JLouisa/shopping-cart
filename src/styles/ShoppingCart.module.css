@@ -1,7 +1,0 @@
-.navListItems > img {
-  transition: 0.3s;
-}
-
-.navListItems > img:hover {
-  transform: scale(1.1);
-}
