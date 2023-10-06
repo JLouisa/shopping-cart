@@ -31,7 +31,7 @@ function App() {
   const createCartItem = (arr, item, qt) => {
     const findItem = arr.find(({ id }) => id === item.id);
     if (findItem === undefined || arr.length === 0) {
-      const newItem = new CartItem(item.id, qt === undefined ? 1 : qt, item.price);
+      const newItem = new CartItem(item.id, qt === undefined ? 1 : qt, item.price.toFixed(2));
       setCart([...arr, newItem]);
       return;
     }

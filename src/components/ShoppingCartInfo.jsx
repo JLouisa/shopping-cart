@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import Button from "./Button";
 
-const ShoppingCartInfo = ({ products, addProductToCart, adjustCartItem, cart, setCart }) => {
+const ShoppingCartInfo = ({ products, adjustCartItem, cart, setCart }) => {
   console.log("cart");
   console.log(cart);
 
@@ -14,7 +14,7 @@ const ShoppingCartInfo = ({ products, addProductToCart, adjustCartItem, cart, se
   const handleDecrement = (prod) => {
     let x = prod.quantity;
     x -= 1;
-    if (x <= 0) x = 0;
+    if (x <= 1) x = 1;
     adjustCartItem(prod, x);
   };
 
@@ -23,6 +23,8 @@ const ShoppingCartInfo = ({ products, addProductToCart, adjustCartItem, cart, se
     x += 1;
     adjustCartItem(prod, x);
   };
+
+  if (cart.length === 0) return "You have no item in your shopping cart";
 
   return (
     <>
@@ -65,10 +67,17 @@ const ShoppingCartInfo = ({ products, addProductToCart, adjustCartItem, cart, se
                 }}
               />
             </div>
-            <hr></hr>
           </div>
         );
       })}
+      <div className="sumDiv">
+        Total: €{" "}
+        {cart
+          .reduce((accumulator, currentValue) => {
+            return accumulator + currentValue.price * currentValue.quantity;
+          }, 0)
+          .toFixed(2)}
+      </div>
     </>
   );
 };

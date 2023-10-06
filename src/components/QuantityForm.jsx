@@ -56,7 +56,7 @@ const QuantityForm = ({ product, addProductToCart }) => {
           </label>
           <input type="hidden" name="id" value={theID} />
           <Button theType="button" text=">" theClass="btn3" onClick={handleIncrement} />
-          <button>Submit</button>
+          <Button theType="submit" text="Add to Cart" theClass="btn2" />
         </form>
       </div>
     </>

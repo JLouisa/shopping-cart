@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import Button from "./Button";
 import { QuantityForm } from "./QuantityForm";
 
 const Products = ({ products, addProductToCart }) => {
@@ -14,13 +13,6 @@ const Products = ({ products, addProductToCart }) => {
               <p>{`€${product.price}`}</p>
               <div>
                 <QuantityForm product={product} addProductToCart={addProductToCart} />
-                <Button
-                  text="Add to Cart"
-                  theClass="btn2"
-                  onClick={() => {
-                    addProductToCart(product);
-                  }}
-                />
               </div>
             </div>
           </div>
