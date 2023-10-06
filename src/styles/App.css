@@ -77,6 +77,7 @@ nav > div {
   width: 90%;
   height: auto;
   border-bottom: 1px solid black;
+  object-fit: cover;
 }
 
 /* ================= */
@@ -101,8 +102,9 @@ footer {
   margin: 0;
 }
 
-.cartInofo {
+.cartInfo {
   display: block;
+  font-size: 1.2rem;
 }
 
 .cartDiv {
@@ -113,14 +115,10 @@ footer {
   align-items: center;
 }
 
-.cartImg {
-  width: 50px;
-  height: 50px;
-}
-
 .cartImg img {
-  width: 100%;
-  height: auto;
+  width: 300px; /* Set the desired width */
+  height: 200px; /* Set the desired height */
+  object-fit: cover;
 }
 
 .cartProductInfo {
@@ -132,8 +130,34 @@ footer {
   padding: 0;
   width: 1rem;
   height: 1rem;
+  border-radius: 50%;
 }
 
 .sumDiv {
-  grid-area: 1/5/2/6;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  padding: 2em;
+}
+
+button {
+  margin: 0.2em;
+}
+
+.checkoutTotal,
+.sumDiv p {
+  grid-area: 1/4/2/5;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.homepage {
+  font-size: 1.5rem;
 }

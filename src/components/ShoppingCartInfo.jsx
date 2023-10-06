@@ -24,8 +24,6 @@ const ShoppingCartInfo = ({ products, adjustCartItem, cart, setCart }) => {
     adjustCartItem(prod, x);
   };
 
-  if (cart.length === 0) return "You have no item in your shopping cart";
-
   return (
     <>
       {cart.map((product) => {
@@ -38,24 +36,26 @@ const ShoppingCartInfo = ({ products, adjustCartItem, cart, setCart }) => {
             <p>{productCart.title}</p>
             <div>
               <Button
+                bgColor="grey"
                 theType="button"
                 text="<"
-                theClass="delBtn"
+                theClass="btn3"
                 onClick={() => {
                   handleDecrement(product);
                 }}
               />
               <span>{product.quantity}</span>
               <Button
+                bgColor="grey"
                 theType="button"
                 text=">"
-                theClass="delBtn"
+                theClass="btn3"
                 onClick={() => {
                   handleIncrement(product);
                 }}
               />
             </div>
-            <p>€ {product.quantity * product.price}</p>
+            <p>€ {(product.quantity * product.price).toFixed(2)}</p>
             <div>
               <Button
                 text="✖"
@@ -71,12 +71,14 @@ const ShoppingCartInfo = ({ products, adjustCartItem, cart, setCart }) => {
         );
       })}
       <div className="sumDiv">
-        Total: €{" "}
-        {cart
-          .reduce((accumulator, currentValue) => {
-            return accumulator + currentValue.price * currentValue.quantity;
-          }, 0)
-          .toFixed(2)}
+        <p>
+          Total: €{" "}
+          {cart
+            .reduce((accumulator, currentValue) => {
+              return accumulator + currentValue.price * currentValue.quantity;
+            }, 0)
+            .toFixed(2)}
+        </p>
       </div>
     </>
   );
