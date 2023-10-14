@@ -4,47 +4,20 @@ import NavigationBar from "./components/NavigationBar.jsx";
 import getData from "./components/getData.jsx";
 import { Outlet } from "react-router-dom";
 import "./styles/App.css";
+import PropTypes from "prop-types";
 
-function App() {
+function App({ addProductToCart, cart, setCart }) {
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     getData().then((res) => setProducts(res));
   }, []);
-
-  class CartItem {
-    constructor(id, quantity, price) {
-      this.id = id;
-      this.quantity = quantity;
-      this.price = price;
-    }
-  }
 
   const deepCopy = (arr) => {
     const newArr = arr.map((item) => {
       return Object.assign({}, item);
     });
     return newArr;
-  };
-
-  const createCartItem = (arr, item, qt) => {
-    const findItem = arr.find(({ id }) => id === item.id);
-    if (findItem === undefined || arr.length === 0) {
-      const newItem = new CartItem(item.id, qt === undefined ? 1 : qt, item.price.toFixed(2));
-      setCart([...arr, newItem]);
-      return;
-    }
-    if (findItem !== undefined) {
-      findItem.quantity += qt === undefined ? 1 : qt;
-      setCart(arr);
-    }
-  };
-
-  const addProductToCart = (item, qt) => {
-    const newCart = JSON.parse(JSON.stringify(cart));
-    const theItem = Object.assign({}, item);
-    createCartItem(newCart, theItem, qt);
   };
 
   const adjustCartItem = (prod, qt) => {
@@ -66,5 +39,10 @@ function App() {
     </>
   );
 }
+App.propTypes = {
+  addProductToCart: PropTypes.func,
+  cart: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  setCart: PropTypes.func,
+};
 
 export { App };

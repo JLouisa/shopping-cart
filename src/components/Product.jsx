@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import { QuantityForm } from "./QuantityForm";
 import { Link } from "react-router-dom";
-// import { useState } from "react";
 import { useContext } from "react";
 import { ShopContext } from "./ShopContextProvider.jsx";
 
@@ -17,8 +16,8 @@ const Products = ({ products, addProductToCart }) => {
   };
   const onClickHandler = (item) => {
     setShopState(item);
-    // console.log(item);
   };
+
   return (
     <>
       {products.map((product) => {
@@ -49,7 +48,7 @@ const Products = ({ products, addProductToCart }) => {
 };
 
 Products.propTypes = {
-  products: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  products: PropTypes.array,
   addProductToCart: PropTypes.func,
 };
 

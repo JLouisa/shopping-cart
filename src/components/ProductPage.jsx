@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
 import { useContext } from "react";
 import { ShopContext } from "./ShopContextProvider.jsx";
+import { QuantityForm } from "./QuantityForm";
 
-const ProductPage = () => {
+const ProductPage = ({ addProductToCart }) => {
   const { shopState } = useContext(ShopContext);
   console.log(shopState);
   return (
@@ -10,12 +11,13 @@ const ProductPage = () => {
       <p>This is the product page</p>
       <div>{shopState.title}</div>
       <div>{shopState.price}</div>
+      <QuantityForm product={shopState} addProductToCart={addProductToCart} />
     </>
   );
 };
 
 ProductPage.propTypes = {
-  product: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  addProductToCart: PropTypes.func,
 };
 
 export default ProductPage;

@@ -1,5 +1,4 @@
 import Products from "./Product";
-import PropTypes from "prop-types";
 import { useOutletContext } from "react-router-dom";
 
 const Shop = () => {
@@ -13,10 +12,6 @@ const Shop = () => {
       </section>
     </>
   );
-};
-
-Shop.propTypes = {
-  products: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
 
 export default Shop;

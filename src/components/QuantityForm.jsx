@@ -24,7 +24,7 @@ const QuantityForm = ({ product, addProductToCart }) => {
 
   const handleInputChange = (event, reset) => {
     if (reset === undefined) {
-      const newValue = parseInt(event.target.value, 10); // Ensure it's a number
+      const newValue = parseInt(event.target.value, 10);
       if (!isNaN(newValue)) {
         setCount(newValue);
       }
