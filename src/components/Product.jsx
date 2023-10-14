@@ -17,25 +17,30 @@ const Products = ({ products, addProductToCart }) => {
   const onClickHandler = (item) => {
     setShopState(item);
   };
+  const productPriceFunc = (price) => {
+    const newPrice = Number(price).toFixed(2);
+    console.log(newPrice);
+    return newPrice;
+  };
 
   return (
     <>
       {products.map((product) => {
         return (
           <div className="productContainer" key={product.id}>
-            <Link
-              to="/ProductPage"
-              onClick={() => {
-                onClickHandler(product);
-              }}
-            >
-              <div className="product">
-                <img src={product.image} alt=""></img>
-              </div>
-            </Link>
+            <div className="product">
+              <Link
+                to="/ProductPage"
+                onClick={() => {
+                  onClickHandler(product);
+                }}
+              >
+                <img src={product.image} alt="" className="pageImg"></img>
+              </Link>
+            </div>
             <div className="productInfo">
               <p>{productTitleLength(product.title)}</p>
-              <p className="productPrice">{`€ ${product.price}`}</p>
+              <p className="productPrice">{`€ ${productPriceFunc(product.price)}`}</p>
               <div>
                 <QuantityForm product={product} addProductToCart={addProductToCart} />
               </div>

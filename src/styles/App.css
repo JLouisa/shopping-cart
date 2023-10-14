@@ -123,7 +123,7 @@ main {
   margin-bottom: 2em;
 }
 
-/* =======Product======= */
+/* =======Product=======  <--------------------------------- */
 .shopSection {
   padding: 1em;
   display: grid;
@@ -139,6 +139,7 @@ main {
   height: auto;
   display: flex;
   flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .product img {
@@ -163,42 +164,6 @@ main {
   font-weight: 700;
 }
 
-/* ==== */
-.productContainer {
-  border: 1px solid black;
-  width: 300px; /* Adjust the width as needed */
-  height: auto; /* Set the desired height */
-  display: flex;
-  flex-direction: column;
-}
-
-.product img {
-  padding: 1em;
-  width: 90%;
-  height: 90%;
-  border-bottom: 1px solid black;
-  object-fit: cover;
-}
-
-.product {
-  flex-grow: 1;
-}
-
-.productInfo {
-  padding: 1em;
-  height: 10rem; /* Adjust the desired height */
-}
-
-/* Style the links */
-.productContainer a {
-  text-decoration: none; /* Remove the default underline */
-  color: inherit; /* Inherit the text color */
-  display: block; /* Make the link a block-level element */
-  width: 100%; /* Full width of the parent container */
-  height: 100%; /* Full height of the parent container */
-}
-
-/* ==== */
 /* ================= */
 footer {
   border-top: 2px solid #777;
@@ -234,6 +199,8 @@ footer {
   align-items: center;
   gap: 1em;
   margin: 1em 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 1em;
 }
 
 .cartImg img {
@@ -313,18 +280,9 @@ button {
 
 .returnBtn {
   display: flex;
-}
-
-.productContainer a {
-  display: block; /* Make the link a block-level element */
-  text-decoration: none; /* Remove the default underline */
-}
-
-.product img {
   padding: 1em;
-  width: 100%; /* Set a fixed width to fill the container */
-  height: 100%; /* Set a fixed height to fill the container */
-  object-fit: contain; /* Maintain aspect ratio, fit within the container */
-  object-position: center; /* Center the image within the container */
-  border-bottom: 1px solid black;
+}
+
+.pageContainer {
+  padding: 2em;
 }
