@@ -1,10 +1,12 @@
 import PropTypes from "prop-types";
 import { QuantityForm } from "./QuantityForm";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+// import { useState } from "react";
+import { useContext } from "react";
+import { ShopContext } from "./ShopContextProvider.jsx";
 
 const Products = ({ products, addProductToCart }) => {
-  const [theProduct, setTheProduct] = useState({});
+  const { setShopState } = useContext(ShopContext);
 
   const productTitleLength = (title) => {
     let newTitle = title;
@@ -14,8 +16,8 @@ const Products = ({ products, addProductToCart }) => {
     return newTitle;
   };
   const onClickHandler = (item) => {
-    setTheProduct(item);
-    console.log(item);
+    setShopState(item);
+    // console.log(item);
   };
   return (
     <>

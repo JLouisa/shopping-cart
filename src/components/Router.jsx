@@ -6,12 +6,17 @@ import ShoppingCart from "./ShoppingCart.jsx";
 import quantityAction from "./quantityAction.js";
 import Checkout from "./Checkout.jsx";
 import ProductPage from "./ProductPage.jsx";
+import { ShopContextProvider } from "./ShopContextProvider.jsx";
 
 const Router = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <App />,
+      element: (
+        <ShopContextProvider>
+          <App />
+        </ShopContextProvider>
+      ),
       children: [
         { path: "", element: <Navigate to="/home" /> },
         { path: "/home", element: <Home /> },
