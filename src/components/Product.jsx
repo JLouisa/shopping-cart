@@ -30,12 +30,12 @@ const Products = ({ products, addProductToCart }) => {
               }}
             >
               <div className="product">
-                <img src={product.image} alt="" />
+                <img src={product.image} alt=""></img>
               </div>
             </Link>
             <div className="productInfo">
               <p>{productTitleLength(product.title)}</p>
-              <p className="productPrice">{`€${product.price}`}</p>
+              <p className="productPrice">{`€ ${product.price}`}</p>
               <div>
                 <QuantityForm product={product} addProductToCart={addProductToCart} />
               </div>
