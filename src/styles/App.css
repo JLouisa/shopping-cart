@@ -15,16 +15,41 @@
 nav {
   display: grid;
   grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1280px 1fr;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid #777;
+}
+
+.navWrapper {
+  grid-row: 1/2;
+  grid-column: 2/3;
+  display: grid;
+  grid-template-rows: 1fr;
   grid-template-columns: repeat(3, 1fr);
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #777;
 }
 
 h1 {
   grid-row: 1/2;
   grid-column: 2/3;
   text-align: center;
+}
+
+.navListItems {
+  grid-row: 1/2;
+  grid-column: 3/4;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1em;
+}
+
+.navListItems a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: inherit;
 }
 
 nav > div {
@@ -56,7 +81,49 @@ nav > div {
   border-radius: 5px;
 }
 
-/* ============== */
+.btn5 {
+  color: white;
+  border: black;
+  outline: none;
+  padding: 0.5em;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: 0.5s;
+}
+
+.btn5:active {
+  transform: scale(0.9);
+}
+.shopImg {
+  transition: 0.3s;
+}
+
+.shopImg:hover {
+  transform: scale(1.1);
+}
+
+.shopImg:active {
+  transform: scale(0.9);
+}
+/* --------------------Wrapper--------------------- */
+.wrapper {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1280px 1fr;
+}
+/* --------------------Main--------------------- */
+main {
+  min-height: 80vh;
+  grid-row: 1/2;
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+/* =======Product======= */
 .shopSection {
   padding: 1em;
   display: grid;
@@ -68,18 +135,33 @@ nav > div {
 
 .productContainer {
   border: 1px solid black;
-  width: 240px;
+  width: 300px;
   height: auto;
+  display: flex;
+  flex-direction: column;
 }
 
-.productContainer img {
+.product img {
   padding: 1em;
   width: 90%;
-  height: auto;
+  height: 90%;
   border-bottom: 1px solid black;
   object-fit: cover;
 }
 
+.product {
+  flex-grow: 1;
+}
+
+.productInfo {
+  padding: 1em;
+  height: 10rem;
+}
+
+.productPrice {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
 /* ================= */
 footer {
   border-top: 2px solid #777;
@@ -113,6 +195,8 @@ footer {
   grid-template-columns: repeat(5, 1fr);
   justify-content: center;
   align-items: center;
+  gap: 1em;
+  margin: 1em 0;
 }
 
 .cartImg img {

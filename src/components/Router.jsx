@@ -4,7 +4,8 @@ import Shop from "./Shop.jsx";
 import Home from "./Home.jsx";
 import ShoppingCart from "./ShoppingCart.jsx";
 import quantityAction from "./quantityAction.js";
-import Checkout from "./Checkout";
+import Checkout from "./Checkout.jsx";
+import ProductPage from "./ProductPage.jsx";
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -17,6 +18,7 @@ const Router = () => {
         { path: "/shop", element: <Shop />, action: quantityAction },
         { path: "/shopping-cart", element: <ShoppingCart /> },
         { path: "/checkout", element: <Checkout /> },
+        { path: "/productpage", element: <ProductPage /> },
       ],
     },
   ]);

@@ -44,19 +44,21 @@ const QuantityForm = ({ product, addProductToCart }) => {
     <>
       <div className="quantityDiv">
         <form onSubmit={afterSubmitForm} className="theForm">
-          <Button theType="button" text="<" theClass="btn3" onClick={handleDecrement} />
-          <label>
-            <input
-              type="number"
-              name="quantityNum"
-              className="no-spinners"
-              value={count}
-              onChange={handleInputChange}
-            />
-          </label>
-          <input type="hidden" name="id" value={theID} />
-          <Button theType="button" text=">" theClass="btn3" onClick={handleIncrement} />
-          <Button theType="submit" text="Add to Cart" theClass="btn2" />
+          <div>
+            <Button theType="button" text="<" theClass="btn3" onClick={handleDecrement} />
+            <label>
+              <input
+                type="number"
+                name="quantityNum"
+                className="no-spinners"
+                value={count}
+                onChange={handleInputChange}
+              />
+            </label>
+            <input type="hidden" name="id" value={theID} />
+            <Button theType="button" text=">" theClass="btn3" onClick={handleIncrement} />
+          </div>
+          <Button theType="submit" text="Add to Cart" theClass="btn5" />
         </form>
       </div>
     </>

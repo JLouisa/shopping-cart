@@ -57,9 +57,11 @@ function App() {
   return (
     <>
       <NavigationBar />
-      <main>
-        <Outlet context={[products, addProductToCart, adjustCartItem, cart, setCart]} />
-      </main>
+      <div className="wrapper">
+        <main>
+          <Outlet context={[products, addProductToCart, adjustCartItem, cart, setCart]} />
+        </main>
+      </div>
       <Footer />
     </>
   );
